@@ -15,7 +15,7 @@ I currently divide my time between a project exploring whether [religious/spirit
 
 ![](/./about_files/DanSmith.jpg)
 
-How to contact/follow me/my research:
+How to contact/follow me and explore my research:
 
 Email: dan.smith@bristol.ac.uk
 

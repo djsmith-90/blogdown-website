@@ -105,13 +105,12 @@ Dyble, M., Thompson, J, **Smith, D.**, et al. (2016) [Networks of Food Sharing R
 
 Page, A. E., Viguier, S., Dyble, M., **Smith, D.**, et al. (2016) [Reproductive trade-offs in extant hunter-gatherers suggest adaptive mechanism for the Neolithic expansion](https://www.pnas.org/content/113/17/4694). PNAS.
 
-**2015 and older**
+**2015**
 
 Dyble, M., Salali, G. D., Chaudhary, N., Page, A. E., **Smith, D.**, et al. (2015) [Sex equality can explain the unique social structure of hunter-gatherer bands](https://www.science.org/lookup/doi/10.1126/science.aaa5139). Science.
 
 Chaudhary, N., Salali, G. D., Thompson, J., Dyble, M., Page, A. E., **Smith, D.**, et al., (2015) [Polygyny without wealth: popularity in gift games predicts polygyny in BaYaka Pygmies](https://royalsocietypublishing.org/doi/10.1098/rsos.150054). Royal Society Open Science.
 
-Ganis, G., **Smith, D.** & Schendan, H. E. (2012) [The N170, not the P1, indexes the earliest time for categorical perception of faces, regardless of interstimulus variance](https://www.sciencedirect.com/science/article/pii/S1053811912005319?via%3Dihub). NeuroImage.
 
 
 ## Miscellaneous
@@ -119,6 +118,10 @@ Ganis, G., **Smith, D.** & Schendan, H. E. (2012) [The N170, not the P1, indexes
 **2019**
 
 Doodson, P., Major, K., **Smith, D.** & Garrett, S. (2019) [Investigating the impact of staff-facilitated educational activities on visitor experience and self-reported learning at Bristol Zoo Gardens, UK](http://izea.net/wp-content/uploads/2020/11/IZE-Journal-2019-digital_compressed.pdf). International Zoo Educators Association Journal.
+
+**2012**
+
+Ganis, G., **Smith, D.** & Schendan, H. E. (2012) [The N170, not the P1, indexes the earliest time for categorical perception of faces, regardless of interstimulus variance](https://www.sciencedirect.com/science/article/pii/S1053811912005319?via%3Dihub). NeuroImage.
 
 **Preprints**
 

@@ -30,9 +30,9 @@ menu:
       weight: 5
       url: /experience/
     - name: GitHub
-      url: https://https://github.com/djsmith-90
+      url: https://github.com/djsmith-90
     - name: Twitter
-      url: https://https://twitter.com/djsmith_90
+      url: https://twitter.com/djsmith_90
 params:
   MathJaxCDN: //cdnjs.cloudflare.com/ajax/libs
   MathJaxVersion: 2.7.5

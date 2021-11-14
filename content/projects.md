@@ -21,7 +21,7 @@ _Funding: EU Horizon 2020 Research and Innovation Programme_
 
 While working at ALSPAC, I was involved in processing much of the COVID-19 questionnaire and antibody samples data collections. Descriptions of these data have been published as 'data notes' in the journal [Wellcome Open Science](https://wellcomeopenresearch.org/gateways/alspac), and are intended to help researchers using this data when conducting COVID-19 work in the ALSPAC cohort.
 
-_Funding: Wellcome Trust, Medical REsearch Council and University of Bristol_
+_Funding: Wellcome Trust, Medical Research Council and University of Bristol_
 
 
 ## COVID-19, cardiovascular health and selection bias (2020 - present)

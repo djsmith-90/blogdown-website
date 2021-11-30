@@ -1,0 +1,417 @@
+---
+title: Dagatha Christie and the Curious Case of Confounding (3)
+author: ''
+date: '2021-11-30'
+slug: dagatha-christie-and-the-curious-case-of-confounding
+categories: []
+tags: []
+---
+
+_The next letter Dagatha receives is from a frantic man called Gary who starts with the rather arresting opening salvo: "AM I GOING TO DIE FROM COVID BECAUSE I'M BALD?!?!". Calming down slightly, Gary goes on to explain that COVID-19 may impact bald people - like himself - more severely than the rest of the population, or so he read in some newspapers^[These were genuine stories. I'll let readers draw their own conclusions about that fact they were published in [the Sun](https://www.thesun.co.uk/news/14870226/bald-men-twice-likely-severe-covid-study/) and the [Daily Mail](https://www.dailymail.co.uk/sciencetech/article-9549897/Health-Bald-men-2-5-TIMES-likely-suffer-severe-COVID-19-study-warns.html).]. This is based on scientific research published by legitimate scientists in peer-reviewed journals, and with a plausible-sounding theory regarding androgens which may affect both hair loss and immune function. Can Dagatha help Gary here? It's not clear to Gary why hair loss would be linked to more serious COVID symptoms, but if it's published science can it be that wrong?_
+
+_Dagatha peruses some of these research papers to take a look for herself^[see [here](https://www.jaad.org/article/S0190-9622(20)30948-8/fulltext) and [here](https://onlinelibrary.wiley.com/doi/10.1111/jocd.13443)]. These studies looked at small numbers of Spanish patients hospitalised with severe COVID-19 symptoms, and then compared the proportion of those patients with hair loss to population-level hair loss statistics. They apparently found that there were more people with hair loss hospitalised with COVID than would be expected based on these wider statistics, and concluded that androgens - as proxied by hair loss - may increase the risk of severe COVID-19. However, Dagatha is suspicious that this association may be spurious, and caused by not properly accounting for age differences^[While comparison with population-level statistics may be informative in some cases, here it's not clear that they are, and it's definitely not a replacement for a formal adjustment for age. First, the age range of their population-level statistics isn't identical to that of the study sample (the COVID studies had an average age of around 60 and a range of approximately 20 to 95; while the [reference study](https://onlinelibrary.wiley.com/doi/10.1111/j.1365-2133.2003.05565.x) only looked at men aged 40-69). Second, the population-level hair loss statistics came from an Australian sample, which may differ from a Spanish one. Third, the cut-offs used to define 'hair loss' differ between the studies, making direct comparisons difficult.]; as age is associated with both baldness and COVID-19 severity, it's plausible - and indeed quite likely - that the supposed associations between hair loss and COVID severity are [explained by age differences, not baldness](https://fullfact.org/health/baldness-genetics-covid/)^[Although it is still possible that hair loss may be associated with COVID severity regardless of age, we just need better studies to explore this.]._
+
+
+So other than maybe breathing a little easier if you have hair loss, what's the message of this preamble? This example is a classic case of confounding, where a lurking 'third variable' can bias an association between two variables. As always, we can draw a DAG to represent the causal hypothesis of the researchers who claim that hair loss - which in this case is used as a proxy for androgen activity - may cause more severe COVID-19 symptoms.
+
+```{r include=FALSE}
+library(dagitty)
+dag1 <- dagitty('dag {
+                baldness [pos = "0,0"]
+                COVID_severity [pos = "1,0"]
+                
+                baldness -> COVID_severity
+                }')
+```
+
+```{r dag1, echo = FALSE, fig.height=0.5, fig.width=3}
+plot(dag1)
+```
+
+
+But if we add 'age' into this DAG, we can see how age, by causing both baldness and COVID severity, can act as a 'back-door path' by which associations can flow from baldness to COVID severity, even if in reality hair loss has no causal effect on COVID-19 severity.
+
+```{r dag2, echo=FALSE, fig.height=1.5, fig.width=3}
+dag2 <- dagitty('dag {
+                baldness [pos = "0,1"]
+                COVID_severity [pos = "2,1"]
+                age [pos = "1,0"]
+                
+                age -> baldness
+                age -> COVID_severity
+                }')
+plot(dag2)
+```
+
+As we went through in the [last post](https://danmajor-smith.netlify.app/2021/11/21/dagatha-christie-enters-a-simulation-2/), by simulating data we can get a better idea of how these different causal structures impact our inferences. So let's simulate the DAG above, where age causes both baldness and COVID-19 severity (hospitalisation with COVID-19), while baldness has no causal effect on hospitalisation (Stata code is provided at the end of the post).
+
+```{r}
+## Set the seed so data is reproducible
+set.seed(9876)
+
+## Simualate age (caused by nothing)
+age <- rnorm(n = 10000, mean = 50, sd = 10)
+
+## Simulate baldness (caused by age)
+# Need to create probabilities from the logit scale
+# first, then sample from that (here, we're saying 
+# that a one-unit increase in age causes a 7%
+# increase in the odds of having hair loss)
+baldness_p <- plogis(log(0.05) + (log(1.07) * age))
+baldness <- rbinom(n = 10000, size = 1, prob = baldness_p)
+table(baldness)
+
+## And now simulate hospitalisation with
+## COVID-19 (COVID severity; caused by age)
+# Here, the probability of having severe COVID is rare,
+# but that it increases with age (by 5% odds per year)
+severity_p <- plogis(log(0.005) + (log(1.05) * age))
+severity <- rbinom(n = 10000, size = 1, prob = severity_p)
+table(severity)
+```
+
+
+Now, as we had complete control over how the data were generated, we know that there is no causal effect of baldness on COVID-19 severity. But if we run a simple univariable logistic regression model of baldness on severity, we see an association between the two. If we took this model at face value as a causal effect, we would say that baldness causes a 30% increase in the odds of having severe COVID-19. For a more intuitive summary of this result, we can look at the predicted probabilities of having severe COVID in each category of 'baldness'; here, we can see that people without hair loss have a 5% chance of being hospitalised with COVID, while this increases to 6.4% in the group with hair loss.
+
+```{r message=FALSE}
+mod_noAge <- glm(severity ~ baldness, family = "binomial")
+
+# Summary on the odds ratio scale
+exp(cbind(OR = coef(summary(mod_noAge))[, 1], 
+          confint(mod_noAge)))
+
+# Look at predicted probabilities for each category of
+# baldness (create a new data frame then use the
+# 'predict' command)
+newdata <- data.frame(baldness = c(0, 1))
+newdata$probs <- predict(mod_noAge, newdata = newdata,
+                         type = "response")
+newdata
+```
+
+
+Hopefully this makes it clear how confounding variables can lead to bias in our causal estimates. But how do we remove this bias to obtain a 'true' estimate?^[I put 'true' in quotation marks, as even though here we know the true causal effect, in reality we wouldn't necessarily know what this is.] Going back to our analogy of information 'flowing' through DAGs regardless of the direction of causality, if we adjust for (or control for, or stratify by) age, we can stop the information flowing between baldness and COVID severity. We can do this by simply adding 'age' as a covariate in our regression model, like so:
+
+```{r message=FALSE}
+mod_age <- glm(severity ~ baldness + age, 
+               family = "binomial")
+
+# Summary on the odds ratio scale
+exp(cbind(OR = coef(summary(mod_age))[, 1], 
+          confint(mod_age)))
+
+# Look at predicted probabilities for each category of
+# baldness at different values of age
+newdata <- data.frame(age = rep(c(30, 50, 70), each = 2),
+                      baldness = rep(c(0, 1), 3))
+newdata$probs <- predict(mod_age, newdata = newdata,
+                         type = "response")
+newdata
+```
+
+Now we can see that there is a strong effect of age on COVID-19 severity and no effect of baldness. And looking at the predicted probabilities of hospitalisation by baldness stratified by age, we see that the probabilities are equal within each age.
+
+
+## Defining confounding
+
+The example above has shown us how confounding can bias associations and how to remove this bias, but how can we actually define confounding? Prior to the rise of causal inference, an agreed-upon definition had proven surprisingly elusive. 
+
+Some common definitions include "any variable that is correlated with both _x_ and _y_" or "if including a variable in a model alters the association between _x_ and _y_, then that's a confounder"^[Both definitions taken from Chapter 4 of Judea Pearl's Book of Why; see the 'further reading' section at the end of this post.]. These approaches would seem to make sense for our example above, as age is correlated with both baldness and COVID severity - and adjusting for it alters the association between the two - so would therefore be seen as a confounder. But consider the DAG below:
+
+```{r dag3, echo=FALSE, fig.height=1, fig.width=4}
+dag3 <- dagitty('dag {
+                diet [pos = "0,1"]
+                CVD [pos = "2,1"]
+                hypertension [pos = "1,1"]
+                
+                diet -> hypertension
+                hypertension -> CVD
+                }')
+plot(dag3)
+```
+
+
+Here, we're interested in the causal effect of diet on cardiovascular disease (CVD). In this scenario, diet does not cause CVD directly, but causes CVD _indirectly_ through its effect on hypertension (that is, diet causes hypertension, which in turn causes CVD). In this example, even though hypertension is associated with both diet and CVD, treating it as a confounder and adjusting for it in a regression model would be nonsensical, as by controlling for hypertension we're completely blocking the path by which diet causes CVD!^[More on these 'mediators' in the next post.] The point is that hypertension in this example fits both definitions of confounding given above, yet clearly controlling for this variable would be a huge mistake.
+
+Taking a causal perspective, we can define a confounder quite simply as "a variable which causes _x_ and _y_".^[For fans of 'do-calculus', confounding can be defined as as a variable which causes P(Y|X) - that is, the probability of Y occurring given X was observed - to differ from P(Y|_do_(X)) - that is, that probability of Y occurring given that that you _do_, or intervene on, X. For more on do-calculus, see Judea Pearl's Book of Why in the 'further reading' section at the end of this post.] This might still sound a bit abstract, but simple cases of confounding can quite easily be spotted in DAGs as a causal arrow from one variable which causes both _x_ and _y_. The example of age confounding baldness and COVID-19 severity (repeated below) is a canonical example of confounding.
+
+```{r echo=FALSE, fig.height=1.5, fig.width=3}
+plot(dag2)
+```
+
+
+Fortunately, as we've seen above, assuming that the confounders are known and measured it is relatively easy to remove bias due to confounding: simply adjust for the confounding variables in your model.
+
+Here's a slightly more complicated example:
+
+```{r echo=FALSE, fig.height=1.5, fig.width=3}
+dag4 <- dagitty('dag {
+                smoking [pos = "0,1"]
+                lungCancer [pos = "2,1"]
+                age [pos = "2,0"]
+                attitudes [pos = "0,0"]
+                
+                smoking -> lungCancer
+                age -> lungCancer
+                age -> attitudes
+                attitudes -> smoking
+                }')
+plot(dag4)
+```
+
+Here we're interested in estimating the causal relationship between smoking and lung cancer. Age is a confounder which causes lung cancer directly, and also causes smoking indirectly through attitudes towards the health risks of smoking: age therefore causes both smoking and lung cancer. But now take attitudes. Attitudes causes smoking, but it doesn't cause lung cancer through any other route. However, even though attitudes isn't technically a confounder because it doesn't cause _x_ and _y_, it can still be considered a surrogate confounder because it is associated with age, which in turn causes lung cancer; so if age was not measured in this study for some reason, then adjusting for attitudes should still return an unbiased estimate because it blocks the back-door path leading from smoking to lung cancer via attitudes and age.
+
+Given this situation, we can either adjust for age or attitudes and this will return an unbiased causal effect of smoking on lung cancer. Let's test this out with some simulated data:
+
+```{r}
+## Set the seed so data is reproducible
+set.seed(6789)
+
+## Simualate age (caused by nothing)
+age <- rnorm(n = 10000, mean = 50, sd = 10)
+
+## Simulate attitudes (caused by age)
+# Will say this is a normally-distributed variable
+# with a mean of 0, and that older people have a 
+# more positive attitude towards smoking
+attitudes <- -5 + (0.1 * age) + 
+  rnorm(n = 10000, mean = 0, sd = 1)
+summary(attitudes)
+
+## Simulate binary smoking variable (caused by
+## attitudes)
+smk_p <- plogis(log(0.2) + (log(2) * attitudes))
+smk <- rbinom(n = 10000, size = 1, prob = smk_p)
+table(smk)
+
+## And now simulate lung cancer (caused by age
+## and smoking)
+lung_p <- plogis(log(0.005) + (log(1.05) * age) +
+                   (log(5) * smk))
+lung <- rbinom(n = 10000, size = 1, prob = lung_p)
+table(lung)
+```
+
+
+Next, we can look at the unadjusted association between smoking and lung cancer - We know this will be biased because we haven't adjusted for age or attitudes. As such, the odds ratio is approximately 6, even though we only simulated it to be 5.
+
+```{r message=FALSE}
+mod_unadj <- glm(lung ~ smk, 
+               family = "binomial")
+
+# Summary on the odds ratio scale
+exp(cbind(OR = coef(summary(mod_unadj))[, 1], 
+          confint(mod_unadj)))
+```
+
+
+Now we'll adjust for age, a confounder which causes both smoking and lung cancer. Now the odds ratio is pretty much 5 (and the 95% confidence intervals contain this value), just as we simulated.
+
+```{r message=FALSE}
+mod_age <- glm(lung ~ smk + age, 
+               family = "binomial")
+
+# Summary on the odds ratio scale
+exp(cbind(OR = coef(summary(mod_age))[, 1], 
+          confint(mod_age)))
+```
+
+
+We also could have adjusted for attitudes. Even though it only causes smoking, because it is associated with a factor (age) which _does_ cause lung cancer, adjusting for 'attitudes' blocks this back-door path and again gives us an unbiased estimate of an odds ratio of 5 for smoking.
+
+```{r message=FALSE}
+mod_att <- glm(lung ~ smk + attitudes, 
+               family = "binomial")
+
+# Summary on the odds ratio scale
+exp(cbind(OR = coef(summary(mod_att))[, 1], 
+          confint(mod_att)))
+```
+
+
+There is also no harm in adjusting for both age and attitudes, as it will give us an unbiased estimate of the effect of smoking on lung cancer, although really there is no need to adjust for both; adjusting for one variable closes the back-door path for both. Either way, we still get an odds ratio of 5.
+
+```{r message=FALSE}
+mod_ageAtt <- glm(lung ~ smk + age + attitudes, 
+               family = "binomial")
+
+# Summary on the odds ratio scale
+exp(cbind(OR = coef(summary(mod_ageAtt))[, 1], 
+          confint(mod_ageAtt)))
+```
+
+
+
+## Benefits of a causal approach to confounding
+
+So what are the benefits of this causal approach to confounding? In my humble opinion there are a fair few, including:
+
+ 1) It provides a clear and unambiguous (and correct!) definition of what 'confounding' actually is. This has settled years of debate on how best to define confounding; turns out this is an impossible task without adopting a causal approach.
+ 2) As a result of this clear definition, it provides clarity on how to spot and adjust for confounding. This can really help when deciding which variables to include as potential covariates in your model. It also adds some discipline and thought to the process of variable selection, rather than the traditional ['causal salad'](https://elevanth.org/blog/2021/06/15/regression-fire-and-dangerous-things-1-3/) approach in which everything is just thrown into a regression without considering the causal structure of the data. It also means that you don't have to adjust for variables which either have no relation to _x_ or _y_, only cause _x_, or only cause _y_^[although adjusting for variables which only cause _y_ may reduce the standard errors of the _x_-_y_ association as variation from other sources is being 'mopped up'; the coefficient of _x_ on _y_ will remain unbiased, however.].
+ 3) This approach makes it clear that in order to identify confounding - and make causal inferences more generally - you have to go beyond the model/data and bring in causal assumptions. This again highlights the importance of taking a causal approach seriously.
+ 4) It shows that, given the assumption that all confounders have been measured and controlled for, you can - tentatively at least - make causal claims from observational data. If you truly have captured all variables which confound the association between _x_ and _y_, then what remains should be a causal estimate of this effect. We can therefore go beyond 'correlation does not imply causation' to say when correlation _may in fact_ imply causation.
+ 
+ 
+Not too shabby, eh?? So that's confounding cracked, and we can now go about adjusting for confounding properly and making all kinds of  causal claims from observational data, right? Alas, unfortunately things are never quite that simple.
+
+In reality we:
+
+ 1) May not have recognised, controlled for or measured all possible confounders (more on this below)
+ 2) May not have measured the confounder well enough, leading to measurement error which could bias our results (more on measurement error in a later post)
+ 3) Might be unsure whether a variable is a confounder or a mediator; if the latter, then - as we saw briefly above - adjusting for a mediating variable will not return an unbiased causal estimate (more on this in the next post)^[This list also doesn't include collider/selection bias, which we'll cover in a later post as well.].
+ 
+ 
+## The curse of unmeasured confounding
+
+One major issue with making causal claims from observational research is the possibility of there being additional confounders that we have either not measured in our study or that we didn't even know existed. Take a longitudinal cohort study looking at the association between intake of a certain nutrient (say, beta-carotene) and some health outcome (say, mortality from cardiovascular disease [CVD]). At baseline, this study assessed diet/nutrient intake, in addition to a whole host of potential confounders (age, sex, socioeconomic position, exercise, etc.); participants were then followed for 10 years to see who died from CVD and whether this was associated with beta-carotene intake, controlling for all confounders mentioned above.
+
+After 10 years, the researchers finally analysed the data and - success! - they find a strong association between beta-carotene intake and lower mortality from CVD. They eagerly write up their results in a paper and claim a causal link between beta-carotene consumption and reduced cardiovascular mortality; after all, they followed the causal recommendations above and adjusted for all possible confounders that they could think of. Additionally, while writing up the results a different team of scientists published an identical result from a different cohort study finding a protective effect of beta-carotene on cardiovascular mortality; the original team feel slightly irked that their big finding has been scooped, but feel even bolder about making causal claims as their finding has been independently replicated. 
+
+Randomised-controlled trials (RCTs) are then conducted to definitively test whether beta-carotene intake reduces mortality from CVD. However, once these RCT results are in they actually find that beta-carotene _increases_ mortality from CVD, rather than reduces it. What the frig is going on here??^[This is based on a real - and unfortunately all too common - example where [observational research and RCTs reported conflicting results](https://academic.oup.com/ije/article/30/1/1/619015).]
+
+The answer is unmeasured confounding. That is, despite the authors' best efforts, there were still other factors associated with both the exposure (beta-carotene intake) and the outcome (mortality from cardiovascular disease) which confounded and biased this relationship. This is variable _U_ in the DAG below.
+
+```{r echo=FALSE, fig.height=3, fig.width=3}
+dag5 <- dagitty('dag {
+                betaCarotene [pos = "0,1"]
+                CVD_mortality [pos = "2,1"]
+                measured_confounds [pos = "1,0"]
+                U [pos = "1,2"]
+                
+                betaCarotene -> CVD_mortality
+                measured_confounds -> betaCarotene
+                U -> betaCarotene
+                measured_confounds -> CVD_mortality
+                U -> CVD_mortality
+                }')
+plot(dag5)
+```
+
+Unfortunately this risk of unmeasured confounding is always a possibility in observational research, hence why it's difficult to make definitive causal claims from this type of work. Any causal interpretation from observational research is therefore always subject to the impossible-to-prove assumption of 'no unmeasured confounding'. In this example, the unmeasured confounder could be something like a 'healthy lifestyle', which is difficult to measure but may confound both diet and CVD mortality risk.
+
+This then begs the question of why we should believe the RCT over the observational study? Random allocation to condition (receiving beta-carotene or not) means that there is no possibility of confounding, hence why RCTs are the 'gold standard' evidence base. We can see this if we edit the DAG above to one for an RCT of this relationship; now, the only factor causing individuals to take beta-carotene is the random allocation, so we can be fairly sure that any association with cardiovascular mortality is a causal effect^[Assuming any association is not due to random variation. And also assuming that it's a 'double-blind' RCT where both the participants and the investigators are blind to the treatment condition.].
+
+```{r echo=FALSE, fig.height=2, fig.width=3.5}
+dag6 <- dagitty('dag {
+                betaCarotene [pos = "0,1"]
+                CVD_mortality [pos = "2,1"]
+                measured_confounds [pos = "2,0"]
+                U [pos = "2,2"]
+                randomness [pos = "0,0"]
+                
+                betaCarotene -> CVD_mortality
+                measured_confounds -> CVD_mortality
+                U -> CVD_mortality
+                randomness -> betaCarotene
+                }')
+plot(dag6)
+```
+
+
+## Summary
+
+This post has covered:
+
+ - How 'confounding' is fundamentally a causal concept, and occurs when a variable causes both the outcome and exposure of interest
+ - How to identify confounding from DAGs
+ - How to remove bias caused by confounding by adjusting for confounding variables
+ - How we don't need to adjust for all covariates in our model if they are not confounders (and may cause more bias if we adjust for mediators between the exposure and the outcome)
+ - How it is possible to make causal claims from observational data, although this must always be tempered by the possibility of unmeasured confounding
+
+In the next post we'll dive into mediators in more detail, giving a formal definition of what a 'mediator' is, discussing total, direct and indirect effects, and introducing the 'Table 2 fallacy'.
+
+
+## Further reading
+
+Chapter 4 of Judea Pearl and Dana Mackenzie's [Book of Why](https://en.wikipedia.org/wiki/The_Book_of_Why) is a gentle introduction to confounding from a causal approach, including a nice historical background highlighting the difficulties of trying to define confounding without a causal perspective.
+
+Chapter 7 of Miguel Hernán and Jamie Robins' book [Causal Inference: What If](https://www.hsph.harvard.edu/miguel-hernan/causal-inference-book/) is also a great - albeit more technical - introduction to confounding.
+
+
+## Stata code
+
+```
+*** Hair loss and COVID example
+
+* Clear data, set observations and set seed
+clear
+set obs 10000
+set seed 9876
+
+* Simulate age (caused by nothing)
+gen age = rnormal(50, 10)
+
+* Simulate baldness (caused by age)
+gen baldness_p = invlogit(log(0.05) + (log(1.07) * age))
+gen baldness = rbinomial(1, baldness_p)
+tab baldness
+
+* And now simulate hospitalisation with COVID-19
+* (caused by age)
+gen severity_p = invlogit(log(0.005) + (log(1.05) * age))
+gen severity = rbinomial(1, severity_p)
+tab severity
+
+* Confounded model of baldness on severity, without
+* adjusting for age
+logistic severity i.baldness
+
+* Predicted probabilities for each category of
+* baldness (using the 'margins' command)
+margins i.baldness
+
+* And now adjusted for age (now baldness-severity
+* association is no longer confounded)
+logistic severity i.baldness age
+
+* Predicted probabilities of having severe COVID
+* by age and baldness category
+margins i.baldness, at(age = (30 50 70))
+
+
+*** Smoking and lung cancer example
+
+* Clear data, set observations and set seed
+clear
+set obs 10000
+set seed 6789
+
+* Simulate age (caused by nothing)
+gen age = rnormal(50, 10)
+
+* Simulate attitudes (caused by age)
+gen attitudes = -5 + (0.1 * age) + rnormal(0, 1)
+sum attitudes
+
+* Simulate binary smoking variable (caused by attitudes)
+gen smk_p = invlogit(log(0.2) + (log(2) * attitudes))
+gen smk = rbinomial(1, smk_p)
+tab smk
+
+* And now simulate lung caner (caused by 
+* age and smoking)
+gen lung_p = invlogit(log(0.005) + ///
+	(log(1.05) * age) + (log(5) * smk))
+gen lung = rbinomial(1, lung_p)
+tab lung
+
+* Unadjusted (biased) association between 
+* smoking and lung cancer
+logistic lung i.smk
+
+* Adjusting for age, which is a confounder as
+* causes both smoking and lung cancer. Smoking
+* association now unbiased
+logistic lung i.smk age
+
+* Can also adjust for 'attitudes' (and not 'age'),
+* even though attitudes is not a true confounder as
+* not cause both smoking and lung cancer. But can
+* be treated as surrogate confounder to block back-door
+* path and return an unbiased estimate
+logistic lung i.smk attitudes
+
+* Could also adjust for both 'age' and 'attitudes'
+* (no harm in this, but also no benefit either)
+logistic lung i.smk age attitudes
+```

@@ -267,7 +267,7 @@ table(heartAttack)
 
 Of 10,000 simulated observations, 198 were predicted to have a heart attack. Now, let's check these parameters match the regression model (remember, as logistic models work on the log-odds scale, we need to exponentiate these coefficients to get them on the odds ratio scale).
 
-```{r}
+```{r message=FALSE}
 heart_mod <- glm(heartAttack ~ age + male + exercise, 
                  family = "binomial")
 
@@ -342,7 +342,6 @@ pwcorr x y, sig
 ** Embed this in a loop to count number of 
 ** spurious associations
 * Set the seed
-* Set the seed
 set seed 42
 
 * Macro to count 'significant' associations
@@ -350,7 +349,6 @@ local sig = 0
 
 * Repeat the simulation 1000 times
 forvalues i = 1(1)1000 {
-  *capture drop x y
   clear
   set obs 100
   

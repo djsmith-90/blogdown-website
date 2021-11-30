@@ -279,7 +279,6 @@ summary(heart_mod)</code></pre>
 <pre class="r"><code># Summary on the odds ratio scale
 exp(cbind(OR = coef(summary(heart_mod))[, 1], 
           confint(heart_mod)))</code></pre>
-<pre><code>## Waiting for profiling to be done...</code></pre>
 <pre><code>##                    OR       2.5 %     97.5 %
 ## (Intercept) 0.0151453 0.004808497 0.04667434
 ## age         1.0206350 1.005691708 1.03585848
@@ -341,7 +340,6 @@ pwcorr x y, sig
 ** Embed this in a loop to count number of 
 ** spurious associations
 * Set the seed
-* Set the seed
 set seed 42
 
 * Macro to count &#39;significant&#39; associations
@@ -349,7 +347,6 @@ local sig = 0
 
 * Repeat the simulation 1000 times
 forvalues i = 1(1)1000 {
-  *capture drop x y
   clear
   set obs 100
   

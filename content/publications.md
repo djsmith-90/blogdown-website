@@ -15,7 +15,7 @@ Fernández-Sanlés, A, **Smith, D.**, et al. (2021) [Bias from questionnaire inv
 
 **Smith, D.**, et al. (2021) [The Avon Longitudinal Study of Parents and Children - A resource for COVID-19 research: Questionnaire data capture November 2020 – March 2021](https://wellcomeopenresearch.org/articles/6-155). Wellcome Open Research.
 
-Northstone, K., **Smith.D.**, et al. (2021) [The Avon Longitudinal Study of Parents and Children - A resource for COVID-19 research: Home-based antibody testing results, October 2020](https://wellcomeopenresearch.org/articles/6-34). Wellcome Open Research.
+Northstone, K., **Smith.D.**, et al. (2021) [The Avon Longitudinal Study of Parents and Children - A resource for COVID-19 research: Home-based antibody testing results, October 2020. An emphasis on self-screening at the population level](https://wellcomeopenresearch.org/articles/6-34). Wellcome Open Research.
 
 Thomas, A., Danon, L., Christensen, H., Northstone, K., **Smith, D.**, et al. (2021) [Limits of lockdown: characterising essential contacts during strict physical distancing](https://wellcomeopenresearch.org/articles/6-116). Wellcome Open Research.
 
@@ -56,6 +56,8 @@ Paul, E., Kounali, D, **Smith, D.**, et al. (2021) [Trajectories of child emotio
 Dyble, M., Migliano, A. B., Page, A. E. & **Smith, D.** (2021) [Relatedness within and between Agta residential groups](https://www.cambridge.org/core/journals/evolutionary-human-sciences/article/relatedness-within-and-between-agta-residential-groups/BA9602DCFAA9A22DD7C8C738ABE01FAF). Evolutionary Human Sciences.
 
 Page, A. E., Emmott, E. H., Dyble. M., **Smith, D.**, et al. (2021) [Children are important too: juvenile playgroups and maternal childcare in a foraging population, the Agta](https://royalsocietypublishing.org/doi/10.1098/rstb.2020.0026). Phil. Trans. R. Soc. B.
+
+Castelli, E., de Almeida, B., Muniz, Y., Silva, ., Passos, M., Souza, A., Page, A. E., Dyble, M., **Smith, D.**, et al. (2021) [HLA-G genetic diversity and evolutive aspects in worldwide populations](https://www.nature.com/articles/s41598-021-02106-4). Scientific Reports.
 
 **2020**
 
@@ -110,6 +112,10 @@ Page, A. E., Viguier, S., Dyble, M., **Smith, D.**, et al. (2016) [Reproductive 
 Dyble, M., Salali, G. D., Chaudhary, N., Page, A. E., **Smith, D.**, et al. (2015) [Sex equality can explain the unique social structure of hunter-gatherer bands](https://www.science.org/lookup/doi/10.1126/science.aaa5139). Science.
 
 Chaudhary, N., Salali, G. D., Thompson, J., Dyble, M., Page, A. E., **Smith, D.**, et al., (2015) [Polygyny without wealth: popularity in gift games predicts polygyny in BaYaka Pygmies](https://royalsocietypublishing.org/doi/10.1098/rsos.150054). Royal Society Open Science.
+
+**Preprints**
+
+Page, A. E., Migliano, A. B., Dyble, M., **Major-Smith., D**, Viguier, S. & Hassan, H. (2021) [Sedentarisation and maternal childcare networks: role of risk, gender and demography](https://osf.io/t2qey/). OSP Preprints.
 
 
 

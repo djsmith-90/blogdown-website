@@ -1,0 +1,176 @@
+---
+title: Dagatha Christie and the Mystery of the Meddling Mediator (4)
+author: ''
+date: '2022-01-13'
+slug: dagatha-christie-and-the-mystery-of-the-meddling-mediator-4
+categories: []
+tags: []
+---
+
+<script src="{{< blogdown/postref >}}index_files/header-attrs/header-attrs.js"></script>
+
+
+<p><em>For a bit of light reading, Dagatha decided to sit down and read the UK Government’s <a href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/974507/20210331_-_CRED_Report_-_FINAL_-_Web_Accessible.pdf">Race Report</a>, published in early 2021, hoping to try and understand the causes of ethnic inequalities in health, education and employment. Despite its lofty aim, the report has been <a href="https://www.theguardian.com/commentisfree/2021/apr/16/government-race-report-evidence">roundly criticised</a> for selective reporting, minimising the impact of discrimination and attempting to <a href="https://www.theguardian.com/world/2021/apr/19/no-10-race-report-tries-normalise-white-supremacy-un-experts">‘normalise white supremacy’ (as quoted by UN human rights experts)</a>. The report has been routinely dismissed as the Conservative government’s attempt to explain away and ignore any racial/ethnic inequalities.</em></p>
+<p><em>Regardless of the merits of this report, the argument they put forward to reach this conclusion piques Dagatha’s interest and may be instructive to explore from a causal perspective. Rather than dismissing racial inequalities outright, they acknowledge these inequalities exist, but largely explain them in terms of other factors, such as geography, socioeconomic background (SEB), family influence and cultural and religious differences rather than due to prejudice, discrimination and institutional racism. They contend that while racial inequalities exist, they are caused by factors other than discrimination. This sets Dagatha’s causal senses tingling. To make this kind of claim, the authors of the report need to assume that these factors, such as SEB, are caused by race/ethnicity, but not discrimination; as such, they are adopting a causal perspective and treating SEB as a confounder (as discussed in the <a href="https://danmajor-smith.netlify.app/2021/11/30/dagatha-christie-and-the-curious-case-of-confounding/">last post</a>). However, Dagatha notes that if discrimination <em>causes</em> SEB, then SEB is a mediator on the causal pathway from discrimination to inequality, and the conclusion that racial inequalities are not due to discrimination may not hold up.</em></p>
+<p>We will return to this example later on and flesh out some of its implications, but for now we need to focus on defining what exactly a ‘mediator’ is and their implications for causal inference.</p>
+<div id="defining-mediation" class="section level2">
+<h2>Defining ‘mediation’</h2>
+<p>So what exactly is a mediator? In essence, a mediator is a mechanism by which a causal effect ‘works’. For instance, blood pressure tablets reduce the risk of heart attack, as shown in the DAG below.</p>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/dag1-1.png" width="288" /></p>
+<p>But the <em>mechanism</em> by which blood pressure tablets work is by lowering blood pressure, as shown in the next DAG.</p>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/dag2-1.png" width="480" /></p>
+<p>Here, ‘lowerBP’ <em>mediates</em> the causal effect of blood pressure tablets on lowering the risk of heart attack. A mediator is therefore a variable which is <em>caused by the exposure</em>, and which in turn <em>causes the outcome</em>.</p>
+<p>Given this definition, we can see why adjusting for a mediator is a bad idea if we’re interested in the causal effect of the exposure on an outcome; by adjusting for a mediator, we block all or some of the path by which the exposure causes the outcome. In the example above, if we adjust for blood pressure measured after taking the blood pressure tablets, we’re effectively asking “what is the effect of blood pressure tablets on the risk of heart attack <em>not</em> mediated by lowering blood pressure?”. In this example, the answer is clearly ‘zero’, because the effect of blood pressure tablets only causes a reduction in the risk of heart attacks through its effect on lowering blood pressure.</p>
+<p>Let’s show this using a simple simulation in R (as always, equivalent Stata code can be found at the end of the post).</p>
+<pre class="r"><code>## Set the seed so data is reproducible
+set.seed(5678)
+
+## Simulate taking BP tablets (caused by nothing/random
+## assignment)
+tablets &lt;- rbinom(n = 10000, size = 1, prob = 0.5)
+table(tablets)</code></pre>
+<pre><code>## tablets
+##    0    1 
+## 5141 4859</code></pre>
+<pre class="r"><code>## Simulate post-tablet systolic blood pressure (lower in
+## those taking tablets)
+bp &lt;- 160 + (-20 * tablets) + 
+  rnorm(n = 10000, mean = 0, sd = 10)
+summary(bp)</code></pre>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   106.9   139.7   150.3   150.2   160.7   193.8</code></pre>
+<pre class="r"><code>## And now simulate having had a heart attack (only
+## caused by blood pressure)
+attack_p &lt;- plogis(log(0.0001) + (log(1.05) * bp))
+attack &lt;- rbinom(n = 10000, size = 1, prob = attack_p)
+table(attack)</code></pre>
+<pre><code>## attack
+##    0    1 
+## 8485 1515</code></pre>
+<p>Next, we will run a logistic regression model to estimate the causal effect of taking blood pressure tablets on the risk of having a heart attack.</p>
+<pre class="r"><code>mod_total &lt;- glm(attack ~ tablets, family = &quot;binomial&quot;)
+
+# Summary on the odds ratio scale
+exp(cbind(OR = coef(summary(mod_total))[, 1], 
+          confint(mod_total)))</code></pre>
+<pre><code>##                    OR     2.5 %    97.5 %
+## (Intercept) 0.2693827 0.2518521 0.2878862
+## tablets     0.3548971 0.3145076 0.3998252</code></pre>
+<p>Here, the odds of having a heart attack are approximately three-times lower in the group taking blood pressure tablets.</p>
+<p>But if we include our mediator ‘blood pressure’ in this model…</p>
+<pre class="r"><code>mod_bp &lt;- glm(attack ~ tablets + bp, family = &quot;binomial&quot;)
+
+# Summary on the odds ratio scale (using &#39;round&#39; here
+# to avoid displaying scientific notation)
+round(exp(cbind(OR = coef(summary(mod_bp))[, 1], 
+          confint(mod_bp))), 7)</code></pre>
+<pre><code>##                    OR     2.5 %    97.5 %
+## (Intercept) 0.0000672 0.0000257 0.0001741
+## tablets     0.9526079 0.8092646 1.1207032
+## bp          1.0527975 1.0466598 1.0590190</code></pre>
+<p>Now, we can see that the association between taking blood pressure tablets and heart attack is essentially null, because we’ve ‘explained away’ the mechanism by which blood pressure tablets cause a reduction in the risk of heart attacks.</p>
+<p>So unlike confounders - which cause both the exposure and the outcome, and hence need to be adjusted for in analyses to obtain an unbiased causal estimate - when dealing with mediating variables we ordinarily would <em>not</em> want to adjust for said mediator, as the coefficient would not be the total causal effect of the exposure on the outcome<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>.</p>
+<p>Of course, in this scenario it’s pretty obvious that adjusting for post-tablet blood pressure - which is caused by taking blood pressure tablets - is folly. But, as we shall see, in other circumstances the distinction between ‘confounder’ and ‘mediator’ is not always so clear-cut.</p>
+</div>
+<div id="some-terminology" class="section level2">
+<h2>Some terminology</h2>
+<p>Now that we’ve established what a mediator is and that it’s generally a bad idea to adjust for them when trying to estimate total causal effects, let’s add a bit of mediation terminology:</p>
+<ul>
+<li><em>Total effect</em>: This is the overall effect of the exposure on the outcome. In the example above, the total effect of taking blood pressure tablets on the risk of heart attack was an odds ratio of 0.35.</li>
+<li><em>Indirect effect</em>: This is the effect of the exposure on the outcome <em>explained by the mediator</em>. In the above example, the effect of taking blood pressure tablets on heart attack risk was fully mediated by lowering blood pressure, so here the indirect effect would also be an odds ratio of 0.35 (and that the indirect effect explains 100% of the total effect).<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></li>
+<li><em>Direct effect</em>: This is the effect of the exposure on the outcome <em>not explained by the mediator</em>. In the above example, the direct effect of blood pressure tablets on heart attack risk was zero, as the total effect was fully mediated by lowering blood pressure.</li>
+</ul>
+<p>So we can think of this in terms of a formula: total effect = direct effect + indirect effect<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></p>
+</div>
+<div id="mediation-and-the-table-2-fallacy" class="section level2">
+<h2>Mediation and the Table 2 fallacy</h2>
+<p>So far we’ve discussed mediators in the context of estimating causal effects, and that total effects can be separated into direct and indirect effects. But issues surrounding mediators also commonly crop up in research that isn’t explicitly interested in mediation.</p>
+<p>In fact, it’s so widespread that it has its own name: the <a href="https://academic.oup.com/aje/article/177/4/292/147738">‘table 2 fallacy’</a>.</p>
+<p>This fallacy occurs when the coefficients of a multivariable regression model (a model with multiple predictor variables), are all interpreted as if they are total effects. When, in fact, thinking about things causally, many estimates are likely to be <em>direct effects</em>.</p>
+<p>Let’s explore this with a simple example. Say our outcome is blood pressure, and our predictor variables are age and amount of exercise. After running a model with age and exercise as predictors, what one often sees in papers is both effects being discussed <em>as if they were total effects</em>. For instance, after running a multivariable model<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>, you might read something like “Each one-year increase in age was associated with a 0.5 increase in systolic blood pressure, while each additional hour of exercise per week was associated with a 1 unit decrease in systolic blood pressure.”</p>
+<p>This sounds pretty innocuous (and fairly standard!), but thinking about things causally can alter the interpretation rather dramatically. Take the following DAG representing these variables, where age causes higher blood pressure, but this effect is partially mediated by exercise (as older people are less likely to exercise, and exercise lowers blood pressure).</p>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/dag3-1.png" width="288" /></p>
+<p>Now the interpretation above of a “one-year increase in age associated with a 0.5 increase in systolic blood pressure” isn’t quite correct, as instead this 0.5 increase is the <em>direct effect</em> of age on blood pressure not mediated by exercise. If we were interested in the total effect of age, given the DAG above this would simply be the association between age and blood pressure, without including exercise as a covariate in the model. The interpretation of the exercise coefficient is the total effect (and therefore is correct), as here age is a confounder of the exercise-blood pressure association, so would need to be adjusted for.</p>
+<p>This highlights the importance of <a href="https://journals.sagepub.com/doi/full/10.1177/00031224211004187">defining your <em>estimand</em></a> - the causal effect of interest - when the aim of the research is causal inference<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a>. The choice of estimand will then inform the choice of statistical model one intends to run. For instance, in the simple example above, if our estimand is ‘the causal effect of age on blood pressure’ then, given our causal assumptions, there’s no need to adjust for exercise; but if our estimand is ‘the causal effect of exercise on blood pressure’, then we would need to adjust for age. You can’t include both age and exercise in the same model and interpret them both as total causal effects (which is the traditional <a href="https://elevanth.org/blog/2021/06/15/regression-fire-and-dangerous-things-1-3/">‘causal salad’</a> approach, where numerous variables are thrown into a regression model and interpreted without thinking about the causal structure of the data).</p>
+<p>The table 2 fallacy is really rather pervasive, and is something I committed in my pre-causal days. For instance, in a paper looking at <a href="https://royalsocietypublishing.org/doi/full/10.1098/rsbl.2017.0464">age at menarche</a>, I explored whether previously reported effects of father absence accelerating age at menarche may in fact be due to differences in sibling relatedness and reproductive conflict<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a>. Finding that father absence was not associated with age at menarche when including sibling relatedness as a covariate (which <em>was</em> associated with age at menarche), I concluded that sibling relatedness, rather than father absence, was associated with age at menarche.</p>
+<p>However, thinking about the causal relations between these variables, it’s plausible that father absence may <em>cause</em> sibling relatedness. That is, father absence causes the mother to have a new relationship with someone else, meaning that future siblings will be half-siblings, rather than full siblings (of step-siblings, if the new partner already has children). This can be represented in a DAG like so:</p>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/dag4-1.png" width="384" /></p>
+<p>In other words, in the paper I was treating sibling relatedness as a potential confounder, rather than a potential mediator, of the relationship between father absence and age at menarche. So by adjusting for sibling relatedness - assuming the hypothesised DAG is correct - I was in fact estimating the <em>direct effect</em> of father absence on age at menarche. The interpretation of the sibling relatedness coefficient can be interpreted as a total effect, but I should not have interpreted both father absence and sibling relatedness estimates as total effects. If I had thought about the causal structure of the data properly and clearly defined my estimand, this kind of misinterpretation could have been avoided<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a>.</p>
+</div>
+<div id="uk-race-report-conflating-confounders-and-mediators" class="section level2">
+<h2>UK Race Report: Conflating confounders and mediators</h2>
+<p>Returning to the UK Government’s race report example, as Dagatha noted, the authors of the report seemingly treated socioeconomic background (SEB) as a confounder of the relationship between racial discrimination and inequality. As always, a DAG should make this clearer.</p>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/dag5-1.png" width="384" /></p>
+<p>In this DAG, ‘Ethnicity’ is used as a proxy for ‘Discrimination’, so we have to estimate the direct effect of ethnicity on inequality in order to estimate the total effect of discrimination on inequality<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a>. This DAG also shows that SEB confounds the association between ‘Discrimination’ and ‘Inequality’ - that is, there is an open back-door path from discrimination to inequality via ethnicity and SEB - so to establish the causal effect of ‘Discrimination’ on ‘Inequality’, we need to adjust for SEB. This is what the authors of the Race Report did, and found that most of association between race/ethnicity and inequality was explained by socioeconomic background (and other factors), rather than being due to discrimination.</p>
+<p>However, if discrimination <em>causes</em> socioeconomic differences, then the picture changes considerably. Now, SEB is a <em>mediator</em> of how discrimination can lead to inequality, rather than a <em>confounder</em>. As we discussed above, to estimate the total effect of an exposure on an outcome in the presence of a mediator, we would not include the mediator in said model; if we did include it, we would instead only obtain the <em>direct effect</em> of discrimination on inequality (and if the effect of discrimination is fully mediated by SEB, this direct effect would be zero, just like we saw above in the example of blood pressure tablets and risk of heart attack).</p>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/dag6-1.png" width="384" /></p>
+<p>Is there any evidence to suggest that SEB is a mediator rather than a confounder of the relationship between discrimination and inequality? In short, yes. For instance, <a href="https://blogs.bmj.com/bmj/2021/03/31/structural-racism-is-a-fundamental-cause-and-driver-of-ethnic-disparities-in-health/">residential segregation is a cause of ethnic differences in socioeconomic background</a>. By treating SEB (and other factors) as confounders, rather than mediators, the Race Report was almost destined to underplay the seriousness of racial/ethnic discrimination on inequality<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a>.</p>
+</div>
+<div id="summary" class="section level2">
+<h2>Summary</h2>
+<p>This post has covered:</p>
+<ul>
+<li>How to define ‘mediation’, which can only be defined in causal terms</li>
+<li>Identifying mediators in DAGs</li>
+<li>How adjusting for mediators can lead to biased total effect estimates</li>
+<li>The table 2 fallacy, and how ignoring the causal structure of the data and treating all regression coefficients as total effects can lead to incorrect conclusions</li>
+<li>The importance of clearly defining your estimand</li>
+<li>How confusing confounders and mediators can dramatically impact the interpretation of results</li>
+</ul>
+<p>In the next post we’ll enter the murky world of colliders, explore how correlation can occur in the absence of causation, and examine how selection bias can bias our lovely inferences.</p>
+</div>
+<div id="further-reading" class="section level2">
+<h2>Further reading</h2>
+<p>Chapter 9 of Judea Pearl and Dana Mackenzie’s <a href="https://en.wikipedia.org/wiki/The_Book_of_Why">Book of Why</a> is a good introduction to mediation (although it does get quite technical, especially when discussing causal mediation analysis).</p>
+<p>Tyler VanderWeele’s book <a href="https://global.oup.com/academic/product/explanation-in-causal-inference-9780199325870?cc=gb&amp;lang=en&amp;">Explanation in Causal Inference: Methods for Mediation and Interaction</a> is the bible on causal mediation analysis.</p>
+<p>David Kenny’s webpage on <a href="https://davidakenny.net/cm/mediate.htm">mediation</a> is also a nice introduction to all things mediation.</p>
+<p>Daniel Westreich and Sander Greenland’s paper on the <a href="https://academic.oup.com/aje/article/177/4/292/147738">Table 2 fallacy</a> should be essential reading too.</p>
+</div>
+<div id="stata-code" class="section level2">
+<h2>Stata code</h2>
+<pre><code>*** Blood pressure tablets and heart attack example
+
+* Clear data, set observations and set seed
+clear 
+set obs 10000
+set seed 5678
+
+* Simulate taking BP tablets (caused by nothing/random
+* assignment)
+gen tablets = rbinomial(1, 0.5)
+tab tablets
+
+* Simulate post-tablet systolic blood pressure (lower in
+* those taking tablets)
+gen bp = 160 + (-20 * tablets) + rnormal(0, 10)
+sum bp
+
+* And now simulate having had a heart attack (only
+* caused by blood pressure)
+gen attack_p = invlogit(log(0.0001) + (log(1.05) * bp))
+gen attack = rbinomial(1, attack_p)
+tab attack
+
+* Logistic regression of tablets on heart attack
+* (estimating total effect of tablets on heart attack)
+logistic attack tablets
+
+* Logistic regression of tablets on heart attack
+* including the mediator blood pressure (now estimating
+* direct effect of tablets on heart attack)
+logistic attack tablets bp</code></pre>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>I say ‘ordinarily’, as sometimes the direct effect, rather than the total effect, may be the estimate of interest.<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>Strictly speaking this isn’t quite correct, as this simple mediation formula <a href="https://davidakenny.net/cm/mediate.htm">only applies to linear models</a>. But for the sake of the pedagogical point I’m making here, I hope you’ll forgive this minor transgression.<a href="#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>Echoing the footnote above, this standard mediation formula only applies to linear models in the absence of interactions, but it’s a useful starting point. Causal mediation analysis <em>can</em> include binary mediators and outcomes, but I’m not going to discuss them here (see the ‘Further reading’).<a href="#fnref3" class="footnote-back">↩︎</a></p></li>
+<li id="fn4"><p>Often presented in table 2 of papers, hence the name of the fallacy.<a href="#fnref4" class="footnote-back">↩︎</a></p></li>
+<li id="fn5"><p>I often get confused between ‘estimand’ (the causal effect of interest), ‘estimate’ (the parameter values of said estimand from the data), and ‘estimator’ (the method to obtain the estimate; e.g., linear regression). For a helpful memory aid, see <a href="https://twitter.com/WomenInStat/status/1449068312873287682">this tweet</a><a href="#fnref5" class="footnote-back">↩︎</a></p></li>
+<li id="fn6"><p>You don’t need to worry about the evolutionary logic behind these hypotheses. Feel free to replace the variable names with ‘X’, ‘Y’ and ‘Z’ if it helps.<a href="#fnref6" class="footnote-back">↩︎</a></p></li>
+<li id="fn7"><p>Given this, there <em>is</em> likely to be a causal association between father absence and earlier at age menarche - at least in this sample, and assuming no other sources of bias - it’s just that much of this effect may be mediated by sibling relatedness.<a href="#fnref7" class="footnote-back">↩︎</a></p></li>
+<li id="fn8"><p>This sounds a bit odd, but I hope it makes sense. For more info on calculating ‘discrimination effects’ using this approach, see page 3 of <a href="https://journals.sagepub.com/doi/pdf/10.1177/23780231211024421">this paper</a><a href="#fnref8" class="footnote-back">↩︎</a></p></li>
+<li id="fn9"><p>As always, the truth is likely to be more complicated. Socioeconomic background and other factors (geography, family, culture, religion, etc.) may be both confounders and mediators, making causal estimation even more difficult. But the aim of this post isn’t to definitely answer this thorny question - which I am far from qualified to do! - but rather to gently introduce the concept of ‘mediators’.<a href="#fnref9" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>

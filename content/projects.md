@@ -5,7 +5,7 @@ title: Projects
 
 ## Religious/spiritual beliefs and behaviors and health in the ALSPAC cohort (2021 - present)
 
-Despite the centrality of religion to many people's everyday lives, examining how religious/spiritual beliefs and behaviours (RSBB) shape human health (both mental and physical), and the factors shaping an individuals RSBBs, remains understudied. I am a Senior Research Associate on a large project led by Prof. Jean Golding which aims to explore these questions using over 30 years of data collected as part of the [ALSPAC cohort](http://www.bristol.ac.uk/alspac/).
+Despite the centrality of religion to many people's everyday lives, examining how religious/spiritual beliefs and behaviours (RSBB) shape human health (both mental and physical), and the factors shaping an individuals RSBBs, remains understudied. I am a Senior Research Associate on a [large project](https://ahrp.blogs.bristol.ac.uk/) led by Prof. Jean Golding which aims to explore these questions using over 30 years of data collected as part of the [ALSPAC cohort](http://www.bristol.ac.uk/alspac/).
 
 _Funding: John Templeton Foundation_
 

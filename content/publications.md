@@ -11,7 +11,7 @@ title: Publications
 
 **Smith, D.**, et al. (2021) [Assessing and predicting adolescent and early adulthood common mental disorders using electronic primary care data: analysis of a prospective cohort study (ALSPAC) in Southwest England](https://bmjopen.bmj.com/content/11/10/e053624). BMJ Open.
 
-Fernández-Sanlés, A, **Smith, D.**, et al. (2021) [Bias from questionnaire invitation and response in COVID-19 research: an example using ALSPAC](https://wellcomeopenresearch.org/articles/6-184). Wellcome Open Research.
+Fernández-Sanlés, A., **Smith, D.**, et al. (2021) [Bias from questionnaire invitation and response in COVID-19 research: an example using ALSPAC](https://wellcomeopenresearch.org/articles/6-184). Wellcome Open Research.
 
 **Smith, D.**, et al. (2021) [The Avon Longitudinal Study of Parents and Children - A resource for COVID-19 research: Questionnaire data capture November 2020 – March 2021](https://wellcomeopenresearch.org/articles/6-155). Wellcome Open Research.
 
@@ -46,6 +46,10 @@ Lawlor, D. A., Lewcock, M., Rena-Jones, L., Rollings, C., Yip, V., **Smith, D.**
 **Preprints**
 
 Paul, E., Kounali, D, **Smith, D.**, et al. (2021) [Trajectories of child emotional and behavioural difficulties before and during the COVID-19 pandemic in a longitudinal UK cohort](https://www.medrxiv.org/content/10.1101/2021.05.11.21257040v1). MedRxiv.
+
+Costantini, I., Sallis, H., Tilling, K., **Major-Smith, D.**, Pearson, R. M & Kounali, D-Z. (2021) [Childhood trajectories of internalising and externalising problems associated with a polygenic risk score for neuroticism in a UK birth cohort study](https://www.medrxiv.org/content/10.1101/2021.12.15.21267397v1). MedRxiv.
+
+Millard, L. A. C.,  Fernández-Sanlés, A., Carter, A. R., Hughes, R., Tilling, K., Morris, T. P., **Major-Smith, D.**, et al. (2021) [Exploring selection bias in COVID-19 research: Simulations and prospective analyses of two UK cohort studies](https://www.medrxiv.org/content/10.1101/2021.12.10.21267363v1). MedRxiv.
 
 
 
@@ -115,7 +119,7 @@ Chaudhary, N., Salali, G. D., Thompson, J., Dyble, M., Page, A. E., **Smith, D.*
 
 **Preprints**
 
-Page, A. E., Migliano, A. B., Dyble, M., **Major-Smith., D**, Viguier, S. & Hassan, H. (2021) [Sedentarisation and maternal childcare networks: role of risk, gender and demography](https://osf.io/t2qey/). OSP Preprints.
+Page, A. E., Migliano, A. B., Dyble, M., **Major-Smith., D**, Viguier, S. & Hassan, H. (2021) [Sedentarisation and maternal childcare networks: role of risk, gender and demography](https://osf.io/t2qey/). OSF Preprints.
 
 
 

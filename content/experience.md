@@ -14,7 +14,7 @@ title: Experience
 ## Employment
 
  - **Senior Research Associate in Health and Religious/Spiritual Beliefs and Behaviours** _University of Bristol_ (September 2021 - present)
- - **Senior Research Associated in Epidemiology** _University of Bristol_ (March 2020 - Present)
+ - **Senior Research Associate in Epidemiology** _University of Bristol_ (March 2020 - Present)
  - **ALSPAC Data Pipeline Manager** _University of Bristol_ (January 2020 - September 2021)
  - **Research Associate in Epidemiology** _University of Bristol_ (October 2019 - March 2020)
  - **Data Preparation Assistant at ALSPAC** _University of Bristol_ (August 2016 - December 2019)
@@ -23,9 +23,9 @@ title: Experience
 
 ## Teaching
 
- - Co-developed and co-lead the Stata Unit for MSc Epidemiology programme at University of Bristol (present)
+ - Co-developed and co-lead the Stata Unit for MSc Epidemiology programme at University of Bristol (current)
  - Personal academic tutor for MSc Epidemiology students at University of Bristol (current)
- - Tutorl for 'Introduction to Stata', 'Advanced Stata' and 'Multiple Imputation for Missing Data' Bristol Medical School short courses (present)
+ - Co-lead the 'Introduction to Stata' Bristol Medical School short courses, and tutor on the 'Advanced Stata' and 'Multiple Imputation for Missing Data' short courses (current)
  - Seminar leader for 'Human Behavioural Ecology' module at UCL (former)
  - Lab assistant for 'Introduction for Biological Anthropology' module at UCL (former)
  
@@ -33,8 +33,8 @@ title: Experience
 ## Supervision
 
  - Line managing Research Associate on current grant
+ - Supervised Master's student dissertation projects
  - Collaborating on projects with research interns
- - Co-supervised student dissertation project on University of Bristol’s ‘Global Wildlife Health and Conservation’ programme
  
  
 ## Select Media Outputs

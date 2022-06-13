@@ -5,6 +5,11 @@ title: Publications
 
 ## Epidemiology
 
+**2022**
+
+**Major-Smith, D.**, et al. (2022) [Demographic and socioeconomic predictors of religious/spiritual beliefs and behaviours in a prospective cohort study (ALSPAC) in Southwest England: Results from the parental generation](https://wellcomeopenresearch.org/articles/7-159). Wellcome Open Research.
+
+
 **2021**
 
 **Major-Smith, D.**, et al. (2021) [The Avon Longitudinal Study of Parents and Children - A resource for COVID-19 research: Antibody testing results, April – June 2021](https://wellcomeopenresearch.org/articles/6-283). Wellcome Open Research.
@@ -42,7 +47,6 @@ Golding, J., Gregory, S., Matthews, S., **Smith, D.**, et al. (2020) [Ancestral 
 Lawlor, D. A., Lewcock, M., Rena-Jones, L., Rollings, C., Yip, V., **Smith, D.**, et al. (2019) [The second generation of The Avon Longitudinal Study of Parents and Children (ALSPAC-G2): a cohort profile](https://wellcomeopenresearch.org/articles/4-36). Wellcome Open Research.
 
 
-
 **Preprints**
 
 Paul, E., Kounali, D, **Smith, D.**, et al. (2021) [Trajectories of child emotional and behavioural difficulties before and during the COVID-19 pandemic in a longitudinal UK cohort](https://www.medrxiv.org/content/10.1101/2021.05.11.21257040v1). MedRxiv.
@@ -50,6 +54,10 @@ Paul, E., Kounali, D, **Smith, D.**, et al. (2021) [Trajectories of child emotio
 Costantini, I., Sallis, H., Tilling, K., **Major-Smith, D.**, Pearson, R. M & Kounali, D-Z. (2021) [Childhood trajectories of internalising and externalising problems associated with a polygenic risk score for neuroticism in a UK birth cohort study](https://www.medrxiv.org/content/10.1101/2021.12.15.21267397v1). MedRxiv.
 
 Millard, L. A. C.,  Fernández-Sanlés, A., Carter, A. R., Hughes, R., Tilling, K., Morris, T. P., **Major-Smith, D.**, et al. (2021) [Exploring selection bias in COVID-19 research: Simulations and prospective analyses of two UK cohort studies](https://www.medrxiv.org/content/10.1101/2021.12.10.21267363v1). MedRxiv.
+
+Lees, V., Hay, R., Bould, H., Kwong, A. S. F., **Major-Smith, D.**, Kounali, D. & Pearson, R. M. (2022) [The impact of routines on emotional and behavioural difficulties in children and on parental anxiety during COVID-19](https://www.medrxiv.org/content/10.1101/2022.03.25.22272950v1). MedRxiv.
+
+Cheetham, N. J., ... **Major-Smith, D.**, et al. (2022) [Antibody levels following vaccination against SARS-CoV-2: associations with post-vaccination infection and risk factors](https://www.medrxiv.org/content/10.1101/2022.05.19.22275214v1). MedRxiv.
 
 
 
@@ -63,6 +71,7 @@ Page, A. E., Emmott, E. H., Dyble. M., **Smith, D.**, et al. (2021) [Children ar
 
 Castelli, E., de Almeida, B., Muniz, Y., Silva, ., Passos, M., Souza, A., Page, A. E., Dyble, M., **Smith, D.**, et al. (2021) [HLA-G genetic diversity and evolutive aspects in worldwide populations](https://www.nature.com/articles/s41598-021-02106-4). Scientific Reports.
 
+
 **2020**
 
 **Smith, D.** (2020) [Cultural group selection and human cooperation: a conceptual and empirical review](https://www.cambridge.org/core/journals/evolutionary-human-sciences/article/cultural-group-selection-and-human-cooperation-a-conceptual-and-empirical-review/3BEEC0756C9D4DFA7D97A320D9D54AB3#article). Evolutionary Human Sciences.
@@ -70,6 +79,7 @@ Castelli, E., de Almeida, B., Muniz, Y., Silva, ., Passos, M., Souza, A., Page, 
 Salali, G. D., Dyble, M., Chaudhary, N., Sikka, G., Derkx, I., Keestra, S., **Smith, D.**, et al. (2020) [Global WEIRDing: transitions in wild plant knowledge and treatment preferences in Congo hunter–gatherers](https://www.cambridge.org/core/journals/evolutionary-human-sciences/article/global-weirding-transitions-in-wild-plant-knowledge-and-treatment-preferences-in-congo-huntergatherers/4F222FFF9292D381F2BDBD5C60C8B796). Evolutionary Human Sciences.
 
 Migliano, A. B., Battiston, F., Viguier, S., Page, A. E., Dyble, M., Schlaepfer, R., **Smith, D.**, et al. (2020) [Hunter-gatherer multilevel sociality accelerates cumulative cultural evolution](https://www.science.org/doi/10.1126/sciadv.aax5913). Science Advances.
+
 
 **2019**
 
@@ -81,11 +91,13 @@ Page, A. E., Thomas, M. G., **Smith, D.**, et al. (2019) [Testing adaptive hypot
 
 Dyble, M., Thorley, J., Page, A. E., **Smith, D.** & Migliano, A. B. (2019) [Engagement in agricultural work is associated with reduced leisure time among Agta hunter-gatherers](https://www.nature.com/articles/s41562-019-0614-6). Nature Human Behaviour.
 
+
 **2018**
 
 **Smith, D.** (2018) [Prisoner's dilemma and cooperation](https://link.springer.com/referenceworkentry/10.1007%2F978-3-319-16999-6_3757-1). Chapter in Encyclopedia of Evolutionary Psychological Science (Eds. T. Shackelford & V. A. Weekes-Shackelford). ([Open-access version](https://research-information.bris.ac.uk/en/publications/prisoners-dilemma-and-cooperation))
 
 Major, K., **Smith, D.** & Migliano, A. B. (2018) [Co-Managers or Co-Residents? Indigenous Peoples’ Participation in the Management of Protected Areas: a Case Study of the Agta in the Philippines](https://link.springer.com/article/10.1007/s10745-018-0007-x). Human Ecology.
+
 
 **2017**
 
@@ -99,6 +111,7 @@ Page, A. E., Chaudhary, N., Viguier, S., Dyble, M., Thompson, J., **Smith, D.**,
 
 Migliano, A. B., Page, A. E., Gómez-Gardenes, J., Salali, G. D., Viguier, S., Dyble, M., Thompson, J, Chaudhary, N., **Smith, D.**, et al. (2017) [Characterization of hunter-gatherer networks and implications for cumulative culture](https://www.nature.com/articles/s41562-016-0043). Nature Human Behaviour.
 
+
 **2016**
 
 **Smith, D.**, et al. (2016) [Camp stability predicts patterns of hunter–gatherer cooperation](https://royalsocietypublishing.org/doi/10.1098/rsos.160131). Royal Society Open Science.
@@ -111,32 +124,35 @@ Dyble, M., Thompson, J, **Smith, D.**, et al. (2016) [Networks of Food Sharing R
 
 Page, A. E., Viguier, S., Dyble, M., **Smith, D.**, et al. (2016) [Reproductive trade-offs in extant hunter-gatherers suggest adaptive mechanism for the Neolithic expansion](https://www.pnas.org/content/113/17/4694). PNAS.
 
+
 **2015**
 
 Dyble, M., Salali, G. D., Chaudhary, N., Page, A. E., **Smith, D.**, et al. (2015) [Sex equality can explain the unique social structure of hunter-gatherer bands](https://www.science.org/lookup/doi/10.1126/science.aaa5139). Science.
 
 Chaudhary, N., Salali, G. D., Thompson, J., Dyble, M., Page, A. E., **Smith, D.**, et al., (2015) [Polygyny without wealth: popularity in gift games predicts polygyny in BaYaka Pygmies](https://royalsocietypublishing.org/doi/10.1098/rsos.150054). Royal Society Open Science.
 
+
 **Preprints**
 
 Page, A. E., Migliano, A. B., Dyble, M., **Major-Smith., D**, Viguier, S. & Hassan, H. (2021) [Sedentarisation and maternal childcare networks: role of risk, gender and demography](https://osf.io/t2qey/). OSF Preprints.
+
+**Major-Smith, D.**, et al. (2022) [Cooperation and partner choice among Agta hunter-gatherer children: An evolutionary developmental perspective](https://osf.io/fw4cj/). OSF Preprints.
 
 
 
 ## Miscellaneous
 
+**2022**
+
+Major, K. & **Smith, D.** (2022) [Measuring the effectiveness of using rangers to deliver a behavior change campaign on sustainable palm oil in a UK zoo](https://onlinelibrary.wiley.com/doi/full/10.1002/zoo.21697). Zoo Biology.
+
+
 **2019**
 
 Doodson, P., Major, K., **Smith, D.** & Garrett, S. (2019) [Investigating the impact of staff-facilitated educational activities on visitor experience and self-reported learning at Bristol Zoo Gardens, UK](http://izea.net/wp-content/uploads/2020/11/IZE-Journal-2019-digital_compressed.pdf). International Zoo Educators Association Journal.
 
+
 **2012**
 
 Ganis, G., **Smith, D.** & Schendan, H. E. (2012) [The N170, not the P1, indexes the earliest time for categorical perception of faces, regardless of interstimulus variance](https://www.sciencedirect.com/science/article/pii/S1053811912005319?via%3Dihub). NeuroImage.
-
-**Preprints**
-
-Major, K. & **Smith, D.** (2021) [Using rangers to deliver a behavior change campaign on sustainable palm oil in a UK zoo](https://osf.io/sn7by). OSF preprints.
-
-
-
 

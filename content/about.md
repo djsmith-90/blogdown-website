@@ -24,7 +24,7 @@ Email: dan.smith@bristol.ac.uk
 
 Twitter: [@djsmith_90](https://twitter.com/djsmith_90)
 
-GitHub: [djsmith-90](https://github.com/djsmith-90) (_I'm still new to git/GitHub, so there may not be much content - I'm hoping to get better and use it more!_)
+GitHub: [djsmith-90](https://github.com/djsmith-90)
 
 [University of Bristol webpage](https://www.bristol.ac.uk/people/person/Dan-Smith-ec5634f3-1c28-4440-8dda-3f8ae43c3dd6/)
 

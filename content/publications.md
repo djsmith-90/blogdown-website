@@ -9,6 +9,8 @@ title: Publications
 
 **Major-Smith, D.**, et al. (2022) [Demographic and socioeconomic predictors of religious/spiritual beliefs and behaviours in a prospective cohort study (ALSPAC) in Southwest England: Results from the parental generation](https://wellcomeopenresearch.org/articles/7-159). Wellcome Open Research.
 
+Morgan, J., Halstead, I., Northstone, K., Golding, J. & **Major-Smith, D.** (2022) [Religious/spiritual beliefs and behaviours and study participation in a prospective cohort study (ALSPAC) in Southwest England](https://wellcomeopenresearch.org/articles/7-186). Wellcome Open Research.
+
 
 **2021**
 
@@ -58,6 +60,10 @@ Millard, L. A. C.,  Fernández-Sanlés, A., Carter, A. R., Hughes, R., Tilling, 
 Lees, V., Hay, R., Bould, H., Kwong, A. S. F., **Major-Smith, D.**, Kounali, D. & Pearson, R. M. (2022) [The impact of routines on emotional and behavioural difficulties in children and on parental anxiety during COVID-19](https://www.medrxiv.org/content/10.1101/2022.03.25.22272950v1). MedRxiv.
 
 Cheetham, N. J., ... **Major-Smith, D.**, et al. (2022) [Antibody levels following vaccination against SARS-CoV-2: associations with post-vaccination infection and risk factors](https://www.medrxiv.org/content/10.1101/2022.05.19.22275214v1). MedRxiv.
+
+**Major-Smith, D.**, et al. (2022) [Individual-level changes in religious/spiritual beliefs and behaviours over three decades in the parental generation of the ALSPAC cohort, UK](https://osf.io/brykn/). OSF Preprints.
+
+**Major-Smith, D.**, et al. (2022) [Associations between religious/spiritual beliefs and behaviours and dietary patterns: analysis of the parental generation in a prospective cohort study (ALSPAC) in Southwest England](https://osf.io/ehvqk/). OSF Preprints.
 
 
 
@@ -137,6 +143,8 @@ Chaudhary, N., Salali, G. D., Thompson, J., Dyble, M., Page, A. E., **Smith, D.*
 Page, A. E., Migliano, A. B., Dyble, M., **Major-Smith., D**, Viguier, S. & Hassan, H. (2021) [Sedentarisation and maternal childcare networks: role of risk, gender and demography](https://osf.io/t2qey/). OSF Preprints.
 
 **Major-Smith, D.**, et al. (2022) [Cooperation and partner choice among Agta hunter-gatherer children: An evolutionary developmental perspective](https://osf.io/fw4cj/). OSF Preprints.
+
+Page, A. E., Ruiz, M., Dyble, M., **Major-Smith, D.**, Migliano, A. B. & Myers, S. (2022) [Wealth, health and inequality in Agta foragers](https://osf.io/ry5xe/). OSF Preprints.
 
 
 

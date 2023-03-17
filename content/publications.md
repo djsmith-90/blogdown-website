@@ -5,11 +5,30 @@ title: Publications
 
 ## Epidemiology
 
+**2023**
+
+**Major-Smith, D.**, et al. (2023) [Individual-level changes in religious/spiritual beliefs and behaviours over three decades in the parental generation of the ALSPAC cohort, UK](https://www.tandfonline.com/doi/full/10.1080/2153599X.2022.2156584). Religion, Brain & Behavior.
+
+Costantini, I., Sallis, H., Tilling, K., **Major-Smith, D.**, Pearson, R. M & Kounali, D-Z. (2023) [Childhood trajectories of internalising and externalising problems associated with a polygenic risk score for neuroticism in a UK birth cohort study](https://acamh.onlinelibrary.wiley.com/doi/10.1002/jcv2.12141). JCPP Advances.
+
+Millard, L. A. C.,  Fernández-Sanlés, A., Carter, A. R., Hughes, R., Tilling, K., Morris, T. P., **Major-Smith, D.**, et al. (2021) [Exploring the impact of selection bias in observational studies of COVID-19: a simulation study](https://academic.oup.com/ije/article/52/1/44/6874795). International Journal of Epidemiology.
+
+Cheetham, N. J., ... **Major-Smith, D.**, et al. (2022) [Antibody levels following vaccination against SARS-CoV-2: associations with post-vaccination infection and risk factors in two UK longitudinal studies](https://elifesciences.org/articles/80428). eLife.
+
+Tohidinik, H. R., Ben-Shlomo, Y., **Major-Smith, D.**, et al. (2023) [Quality of relationships in mothers and their partners in the Avon Longitudinal Study of Parents and Children](https://wellcomeopenresearch.org/articles/8-62). Wellcome Open Research.
+
+
 **2022**
+
+**Major-Smith, D.**, et al. (2022) [Demographic and socioeconomic predictors of religious/spiritual beliefs and behaviours in a prospective cohort study (ALSPAC) in Southwest England: Results from the offspring generation](https://wellcomeopenresearch.org/articles/7-290). Wellcome Open Research.
 
 **Major-Smith, D.**, et al. (2022) [Demographic and socioeconomic predictors of religious/spiritual beliefs and behaviours in a prospective cohort study (ALSPAC) in Southwest England: Results from the parental generation](https://wellcomeopenresearch.org/articles/7-159). Wellcome Open Research.
 
+**Major-Smith, D.**, et al. (2022) [The Avon Longitudinal Study of Parents and Children (ALSPAC): a 2022 update on the enrolled sample of mothers and the associated baseline data](https://wellcomeopenresearch.org/articles/7-283). Wellcome Open Research.
+
 Morgan, J., Halstead, I., Northstone, K., Golding, J. & **Major-Smith, D.** (2022) [Religious/spiritual beliefs and behaviours and study participation in a prospective cohort study (ALSPAC) in Southwest England](https://wellcomeopenresearch.org/articles/7-186). Wellcome Open Research.
+
+Campbell, A., Munafò, M., Sallis, H. M., Pearson, R. M., & **Smith, D.** (2022) [Commentary: Culture and causal inference: The impact of cultural differences on the generalisability of findings from Mendelian randomisation studies](https://www.cambridge.org/core/journals/behavioral-and-brain-sciences/article/abs/culture-and-causal-inference-the-impact-of-cultural-differences-on-the-generalisability-of-findings-from-mendelian-randomisation-studies/FF97EE277996B5C3539F0FB7AE092388). Behavioral and Brain Sciences.
 
 
 **2021**
@@ -53,21 +72,20 @@ Lawlor, D. A., Lewcock, M., Rena-Jones, L., Rollings, C., Yip, V., **Smith, D.**
 
 Paul, E., Kounali, D, **Smith, D.**, et al. (2021) [Trajectories of child emotional and behavioural difficulties before and during the COVID-19 pandemic in a longitudinal UK cohort](https://www.medrxiv.org/content/10.1101/2021.05.11.21257040v1). MedRxiv.
 
-Costantini, I., Sallis, H., Tilling, K., **Major-Smith, D.**, Pearson, R. M & Kounali, D-Z. (2021) [Childhood trajectories of internalising and externalising problems associated with a polygenic risk score for neuroticism in a UK birth cohort study](https://www.medrxiv.org/content/10.1101/2021.12.15.21267397v1). MedRxiv.
-
-Millard, L. A. C.,  Fernández-Sanlés, A., Carter, A. R., Hughes, R., Tilling, K., Morris, T. P., **Major-Smith, D.**, et al. (2021) [Exploring selection bias in COVID-19 research: Simulations and prospective analyses of two UK cohort studies](https://www.medrxiv.org/content/10.1101/2021.12.10.21267363v1). MedRxiv.
-
 Lees, V., Hay, R., Bould, H., Kwong, A. S. F., **Major-Smith, D.**, Kounali, D. & Pearson, R. M. (2022) [The impact of routines on emotional and behavioural difficulties in children and on parental anxiety during COVID-19](https://www.medrxiv.org/content/10.1101/2022.03.25.22272950v1). MedRxiv.
 
-Cheetham, N. J., ... **Major-Smith, D.**, et al. (2022) [Antibody levels following vaccination against SARS-CoV-2: associations with post-vaccination infection and risk factors](https://www.medrxiv.org/content/10.1101/2022.05.19.22275214v1). MedRxiv.
-
-**Major-Smith, D.**, et al. (2022) [Individual-level changes in religious/spiritual beliefs and behaviours over three decades in the parental generation of the ALSPAC cohort, UK](https://osf.io/brykn/). OSF Preprints.
-
 **Major-Smith, D.**, et al. (2022) [Associations between religious/spiritual beliefs and behaviours and dietary patterns: analysis of the parental generation in a prospective cohort study (ALSPAC) in Southwest England](https://osf.io/ehvqk/). OSF Preprints.
+
+**Major-Smith, D.**, et al. (2023) [Incorporating interactions into structured life course modelling approaches: A simulation study and applied example of the role of access to green space and socioeconomic position on cardiometabolic health](https://www.medrxiv.org/content/10.1101/2023.01.24.23284935v1). MedRXiv.
 
 
 
 ## Evolutionary Anthropology
+
+**2022**
+
+Page, A. E., Migliano, A. B., Dyble, M., **Major-Smith., D**, Viguier, S. & Hassan, H. (2021) [Sedentarisation and maternal childcare networks: role of risk, gender and demography](https://royalsocietypublishing.org/doi/10.1098/rstb.2021.0435). Philosophical Transactions of the Royal Society B: Biological Sciences.
+
 
 **2021**
 
@@ -140,9 +158,9 @@ Chaudhary, N., Salali, G. D., Thompson, J., Dyble, M., Page, A. E., **Smith, D.*
 
 **Preprints**
 
-Page, A. E., Migliano, A. B., Dyble, M., **Major-Smith., D**, Viguier, S. & Hassan, H. (2021) [Sedentarisation and maternal childcare networks: role of risk, gender and demography](https://osf.io/t2qey/). OSF Preprints.
-
 **Major-Smith, D.**, et al. (2022) [Cooperation and partner choice among Agta hunter-gatherer children: An evolutionary developmental perspective](https://osf.io/fw4cj/). OSF Preprints.
+
+**Major-Smith, D.** (2023) [Exploring causality from observational data: An example assessing whether religiosity promotes cooperation](https://osf.io/j56e4). OSF Preprints. (this is a Stage 1 Registered Reported provisionally accepted in Evolutionary Human Sciences)
 
 Page, A. E., Ruiz, M., Dyble, M., **Major-Smith, D.**, Migliano, A. B. & Myers, S. (2022) [Wealth, health and inequality in Agta foragers](https://osf.io/ry5xe/). OSF Preprints.
 

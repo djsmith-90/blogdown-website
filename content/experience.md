@@ -14,7 +14,7 @@ title: Experience
 ## Employment
 
  - **Senior Research Associate in Health and Religious/Spiritual Beliefs and Behaviours** _University of Bristol_ (September 2021 - present)
- - **Senior Research Associate in Epidemiology** _University of Bristol_ (March 2020 - Present)
+ - **Senior Research Associate in Epidemiology** _University of Bristol_ (March 2020 - April 2022)
  - **ALSPAC Data Pipeline Manager** _University of Bristol_ (January 2020 - September 2021)
  - **Research Associate in Epidemiology** _University of Bristol_ (October 2019 - March 2020)
  - **Data Preparation Assistant at ALSPAC** _University of Bristol_ (August 2016 - December 2019)

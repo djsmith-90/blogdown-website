@@ -9,13 +9,19 @@ title: Publications
 
 **Major-Smith, D.**, et al. (2023) [Individual-level changes in religious/spiritual beliefs and behaviours over three decades in the parental generation of the ALSPAC cohort, UK](https://www.tandfonline.com/doi/full/10.1080/2153599X.2022.2156584). Religion, Brain & Behavior.
 
+**Major-Smith, D.**, et al. (2023) [Associations between religious/spiritual beliefs and behaviours and dietary patterns: analysis of the parental generation in a prospective cohort study (ALSPAC) in Southwest England](https://doi.org/10.1017/S1368980023001866). Public Health Nutrition.
+
+**Major-Smith, D.**, et al. (2023). [Associations between psychological factors and religious/spiritual beliefs and behaviours in a prospective cohort study (ALSPAC) in Southwest England: A descriptive study](https://wellcomeopenresearch.org/articles/8-174). Wellcome Open Research.
+
 Costantini, I., Sallis, H., Tilling, K., **Major-Smith, D.**, Pearson, R. M & Kounali, D-Z. (2023) [Childhood trajectories of internalising and externalising problems associated with a polygenic risk score for neuroticism in a UK birth cohort study](https://acamh.onlinelibrary.wiley.com/doi/10.1002/jcv2.12141). JCPP Advances.
 
-Millard, L. A. C.,  Fernández-Sanlés, A., Carter, A. R., Hughes, R., Tilling, K., Morris, T. P., **Major-Smith, D.**, et al. (2021) [Exploring the impact of selection bias in observational studies of COVID-19: a simulation study](https://academic.oup.com/ije/article/52/1/44/6874795). International Journal of Epidemiology.
+Millard, L. A. C.,  Fernández-Sanlés, A., Carter, A. R., Hughes, R., Tilling, K., Morris, T. P., **Major-Smith, D.**, et al. (2023) [Exploring the impact of selection bias in observational studies of COVID-19: a simulation study](https://academic.oup.com/ije/article/52/1/44/6874795). International Journal of Epidemiology.
 
-Cheetham, N. J., ... **Major-Smith, D.**, et al. (2022) [Antibody levels following vaccination against SARS-CoV-2: associations with post-vaccination infection and risk factors in two UK longitudinal studies](https://elifesciences.org/articles/80428). eLife.
+Cheetham, N. J., ... **Major-Smith, D.**, et al. (2023) [Antibody levels following vaccination against SARS-CoV-2: associations with post-vaccination infection and risk factors in two UK longitudinal studies](https://elifesciences.org/articles/80428). eLife.
 
 Tohidinik, H. R., Ben-Shlomo, Y., **Major-Smith, D.**, et al. (2023) [Quality of relationships in mothers and their partners in the Avon Longitudinal Study of Parents and Children](https://wellcomeopenresearch.org/articles/8-62). Wellcome Open Research.
+
+Lees, V., Hay, R., Bould, H., Kwong, A. S. F., **Major-Smith, D.**, Kounale, D. & Pearson, R. M. (2023) [The impact of routines on emotional and behavioural difficulties in children and on parental anxiety during COVID-19](https://www.frontiersin.org/articles/10.3389/frcha.2023.1114850/full). Frontiers in Child and Adolescent Psychiatry.
 
 
 **2022**
@@ -72,19 +78,28 @@ Lawlor, D. A., Lewcock, M., Rena-Jones, L., Rollings, C., Yip, V., **Smith, D.**
 
 Paul, E., Kounali, D, **Smith, D.**, et al. (2021) [Trajectories of child emotional and behavioural difficulties before and during the COVID-19 pandemic in a longitudinal UK cohort](https://www.medrxiv.org/content/10.1101/2021.05.11.21257040v1). MedRxiv.
 
-Lees, V., Hay, R., Bould, H., Kwong, A. S. F., **Major-Smith, D.**, Kounali, D. & Pearson, R. M. (2022) [The impact of routines on emotional and behavioural difficulties in children and on parental anxiety during COVID-19](https://www.medrxiv.org/content/10.1101/2022.03.25.22272950v1). MedRxiv.
-
-**Major-Smith, D.**, et al. (2022) [Associations between religious/spiritual beliefs and behaviours and dietary patterns: analysis of the parental generation in a prospective cohort study (ALSPAC) in Southwest England](https://osf.io/ehvqk/). OSF Preprints.
-
 **Major-Smith, D.**, et al. (2023) [Incorporating interactions into structured life course modelling approaches: A simulation study and applied example of the role of access to green space and socioeconomic position on cardiometabolic health](https://www.medrxiv.org/content/10.1101/2023.01.24.23284935v1). MedRXiv.
+
+Morgan, J., **Major-Smith, D.**, Jong, J., & Golding, J. (2023) [Are Religious/Spiritual Beliefs and Behaviours Associated with How PeopleCope with Traumatic Events? Findings from the parental generation of a UK birth cohort](https://osf.io/hr8yx/). OSF Preprints.
 
 
 
 ## Evolutionary Anthropology
 
+**2023**
+
+**Major-Smith, D.**, et al. (2023) [Cooperation and partner choice among Agta hunter-gatherer children: An evolutionary developmental perspective](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0284360). PLOS ONE.
+
+**Major-Smith, D.** (2023) [Exploring causality from observational data: An example assessing whether religiosity promotes cooperation](https://doi.org/10.1017/ehs.2023.17). Evolutionary Human Science (Registered Report).
+
+Page, A. E., Ruiz, M., Dyble, M., **Major-Smith, D.**, Migliano, A. B. & Myers, S. (2023) [Wealth, health and inequality in Agta foragers](https://academic.oup.com/emph/article/11/1/149/7162654). Evolution, Medicine, & Public Health.
+
+Ross, C., ... **Major-Smith, D.**, ... & Borgerhoff Mulder, M. (2023). [Reproductive inequality in humans and other mammals](https://www.pnas.org/doi/abs/10.1073/pnas.2220124120). PNAS.
+
+
 **2022**
 
-Page, A. E., Migliano, A. B., Dyble, M., **Major-Smith., D**, Viguier, S. & Hassan, H. (2021) [Sedentarisation and maternal childcare networks: role of risk, gender and demography](https://royalsocietypublishing.org/doi/10.1098/rstb.2021.0435). Philosophical Transactions of the Royal Society B: Biological Sciences.
+Page, A. E., Migliano, A. B., Dyble, M., **Major-Smith., D**, Viguier, S. & Hassan, H. (2022) [Sedentarisation and maternal childcare networks: role of risk, gender and demography](https://royalsocietypublishing.org/doi/10.1098/rstb.2021.0435). Philosophical Transactions of the Royal Society B: Biological Sciences.
 
 
 **2021**
@@ -156,14 +171,6 @@ Dyble, M., Salali, G. D., Chaudhary, N., Page, A. E., **Smith, D.**, et al. (201
 Chaudhary, N., Salali, G. D., Thompson, J., Dyble, M., Page, A. E., **Smith, D.**, et al., (2015) [Polygyny without wealth: popularity in gift games predicts polygyny in BaYaka Pygmies](https://royalsocietypublishing.org/doi/10.1098/rsos.150054). Royal Society Open Science.
 
 
-**Preprints**
-
-**Major-Smith, D.**, et al. (2022) [Cooperation and partner choice among Agta hunter-gatherer children: An evolutionary developmental perspective](https://osf.io/fw4cj/). OSF Preprints.
-
-**Major-Smith, D.** (2023) [Exploring causality from observational data: An example assessing whether religiosity promotes cooperation](https://osf.io/j56e4). OSF Preprints. (this is a Stage 1 Registered Reported provisionally accepted in Evolutionary Human Sciences)
-
-Page, A. E., Ruiz, M., Dyble, M., **Major-Smith, D.**, Migliano, A. B. & Myers, S. (2022) [Wealth, health and inequality in Agta foragers](https://osf.io/ry5xe/). OSF Preprints.
-
 
 
 ## Miscellaneous
@@ -181,4 +188,9 @@ Doodson, P., Major, K., **Smith, D.** & Garrett, S. (2019) [Investigating the im
 **2012**
 
 Ganis, G., **Smith, D.** & Schendan, H. E. (2012) [The N170, not the P1, indexes the earliest time for categorical perception of faces, regardless of interstimulus variance](https://www.sciencedirect.com/science/article/pii/S1053811912005319?via%3Dihub). NeuroImage.
+
+
+**Preprints**
+
+Major-Smith, K., Borne, G., Wallis, L., **Major-Smith, D.**, & Cotton, D. (2023) [Impact of a default nudge intervention on plant-based milk consumption in a UK university café](https://osf.io/preprints/osf/3cpsr). OSF Preprints.
 

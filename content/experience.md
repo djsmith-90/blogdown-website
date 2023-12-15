@@ -14,18 +14,20 @@ title: Experience
 ## Employment
 
  - **Senior Research Associate in Health and Religious/Spiritual Beliefs and Behaviours** _University of Bristol_ (September 2021 - present)
+ - **Visiting lecturer in Public Health** _Plymouth Marjon University_ (October 2023 - present)
  - **Senior Research Associate in Epidemiology** _University of Bristol_ (March 2020 - April 2022)
  - **ALSPAC Data Pipeline Manager** _University of Bristol_ (January 2020 - September 2021)
  - **Research Associate in Epidemiology** _University of Bristol_ (October 2019 - March 2020)
  - **Data Preparation Assistant at ALSPAC** _University of Bristol_ (August 2016 - December 2019)
- - **Post-Graduate Teaching Assistant** _UCL_ (September 2013 - April 2016)
+ - **Post-Graduate Teaching Assistant in Anthropology** _UCL_ (September 2013 - April 2016)
 
 
 ## Teaching
 
  - Co-developed and co-lead the Stata Unit for MSc Epidemiology programme at University of Bristol (current)
+ - Developed and lead the 'Epidemiology and Statistics for Public Health' module as a visiting lecturer at Plymouth Marjon University (Sept 2023 - Jan 2024) 
  - Personal academic tutor for MSc Epidemiology students at University of Bristol (current)
- - Co-lead the 'Introduction to Stata' Bristol Medical School short courses, and tutor on the 'Advanced Stata' and 'Multiple Imputation for Missing Data' short courses (current)
+ - Co-lead the 'Introduction to Stata' Bristol Medical School short courses, and tutor on the 'Advanced Stata', 'Multiple Imputation for Missing Data' and 'Advanced Missing Data' short courses (current)
  - Seminar leader for 'Human Behavioural Ecology' module at UCL (former)
  - Lab assistant for 'Introduction for Biological Anthropology' module at UCL (former)
  
@@ -47,6 +49,7 @@ title: Experience
 **Print Media**
 
  - Nieman Storyboard (2020) - [Why storytelling can be more important – and sexier – than fishing and hunting](https://niemanstoryboard.org/stories/why-storytelling-can-be-more-important-and-sexier-than-fishing-and-hunting/)
+ - Harper's Magazine (2019) - [The Story of Storyelling](https://harpers.org/archive/2019/03/the-story-of-storytelling/)
  - Science News (2018) - [The way hunter-gatherers share food shows how cooperation evolved](https://www.sciencenews.org/article/way-hunter-gatherers-share-food-shows-how-cooperation-evolved?tgt=nr)
  - BBC News (2018) - [Our fiction addiction: Why humans need stories](http://www.bbc.com/culture/story/20180503-our-fiction-addiction-why-humans-need-stories)
  - The New York Times (2017) - [Opinion: Why holiday stories matter](https://www.nytimes.com/2017/12/20/opinion/holiday-stories.html)
@@ -60,6 +63,8 @@ title: Experience
 
 ## Recent Conference Presentations and Invited Talks
 
+ - **August 2023 - International Association for the Psychology of Religion conference - University of Gronginen:** Talk entitled 'The contribution of longitudinal cohort studies to understanding causal relations between religion and health: An example using ALSPAC'.
+ - **April 2023 - European Human Behaviour and Evolution Association conference – UCL:** Talk entitled 'Sensitivity analyses to explore causal assumptions from observational data: An example assessing whether religiosity promotes cooperation in UK parents'.
  - **April 2020 – Guest lecturer – University of Bristol:** Talk entitled ‘Cooperation among Agta hunter-gatherers: kinship, reciprocity and storytelling’ to undergraduate anthropology and archaeology students (online lecture).
  - **Repeated 2019-present – Guest lecturer – University of Cambridge:** Talks entitled ‘Cooperation and the evolution of hunter-gatherer storytelling’ and ‘The ontogeny of cooperation: when and why children help others’ to undergraduate anthropology and archaeology students.
  - **November 2018 – Invited speaker at ‘Bristol Anthropology and Archaeology Research Seminar’ – University of Bristol:** Talk entitled ‘Cooperation and the evolution of hunter-gatherer storytelling’.
@@ -71,13 +76,15 @@ title: Experience
 
 
 ## Peer reviewer
- - Numerous journals, including: American Journal of Human Biology, Biology Letters, Evolution and Human Behavior, Human Nature, Acta Ethologica, Evolutionary Psychology, Evolutionary Psychological Science, Frontiers and Journal of Psychiatric Research.
+ - Numerous journals, including: American Journal of Human Biology, Biology Letters, Evolution and Human Behavior, Human Nature, Evolutionary Human Sciences, Scientitif Reports, BMJ Open and Preventative Medicine.
  - I am also a reviewer of ALSPAC papers, to ensure that ALSPAC publishing guidelines are met.
  - I have also reviewed academic books and grant proposals
+ - External Examiner for an MPhil viva
 
 
 ## Funding and awards
 
+ - October 2023: Co-PI on Jean Golding Institute Staff Seed Corn Funding project "Synthetic Health Data for Research Support - an exemplar from a birth cohort" (awarded £4,518)
  - June 2019: BIAZA (British and Irish Association of Zoos and Aquariums) Research Gold Award for a project I was involved in entitled ‘Using rangers to deliver a zoo-based behaviour change campaign on sustainable palm oil’ in collaboration with Bristol Zoo Gardens.
  - April 2018: Awarded £500 departmental grant by University of Bristol to attend the ‘European Human Behaviour and Evolution Association’ conference at the University of Pécs, Hungary.
  - January 2013: Fully-funded PhD position on the Leverhulme Trust-funded ‘Hunter-Gatherer Resilience Project’.
